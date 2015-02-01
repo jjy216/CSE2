@@ -27,16 +27,23 @@ public class Arithmetic{
             //socks
         double TotalsockCost$ = nSocks * sockCost$;
         double sockTax$ = TotalsockCost$ * taxPercent;
+        sockTax$ = ((int)(sockTax$*100))/100.0;
+        
             //drinking glass
         double TotalglassCost$ = nGlasses * glassCost$;
         double glassTax$ = TotalglassCost$ * taxPercent;
+        glassTax$ = ((int)(glassTax$*100))/100.0;
+        
             //envelopes
         double TotalenvelopeCost$ = nEnvelopes * envelopeCost$;
         double envelopeTax$ = TotalenvelopeCost$ * taxPercent;
+        envelopeTax$ = ((int)(envelopeTax$*100))/100.0;
+        
             //Total Cost before tax
         double TotalCost$ = TotalsockCost$ + TotalglassCost$ + TotalenvelopeCost$;
             //Total Cost after tax
         double TotalCostTax$ = TotalCost$ * taxPercent + TotalCost$;
+        TotalCostTax$ = ((int)(TotalCostTax$*100))/100.0;
         
         //Print outs
     	    //socks
