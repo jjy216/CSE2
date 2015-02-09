@@ -4,25 +4,30 @@
 //02.10.2015
 //This program will allow me to show the first four decimals
 
-import java.util.Scanner;//Import the scanner
-//Define class
-public class FourDigits {
-    //main method
-    public static void main(String[] args) {
-        Scanner DigitScanner;
-        DigitScanner = new Scanner( System.in );
-        //Scanner setup complete
-        System.out.print("Enter a double with four decimal points and I display the four digits to the right of a decimal point- ");
-        Double RandomDouble = DigitScanner.nextDouble();
+import java.util.Scanner; //import the scanner
 
-        System.out.println("The four digits are "+output3+".");
+public class FourDigits { //define class
+    public static void main(String[] args) { //main method to use Java Program
+        
+        //Scanner
+        Scanner DigitScanner; //define scanner
+        DigitScanner = new Scanner( System.in ); //scanner ready
         
         
+        //variable
+        int fourdigits;
         
-        
-        
-        
-        
+        //input
+        System.out.print("Enter a double with four decimal points and I display the four digits to the right of a decimal point- "); //asking for input
+        double RandomDouble = DigitScanner.nextDouble(); //store input in scanner
+          
+        //getting four digits
+        RandomDouble *= 10000; //first make it a whole number
+        fourdigits = (int)(RandomDouble); //making into an integer and storing as fourdigits
+        fourdigits = fourdigits%10000; //dividing by 10000 and getting only the four digits right of the decimal
+
+        //output
+        System.out.println("The four digits are "+fourdigits+"."); //print out the result
         
         
         
