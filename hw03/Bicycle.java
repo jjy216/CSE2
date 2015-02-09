@@ -2,7 +2,8 @@
 //Jason Yang
 //HW-03 Bicycle
 //02.10.2015
-//
+//Calculating distance, minutes, and MPH traveled with a Bicycle.
+//Using Scanner to do this. 
 
 import java.util.Scanner; //importing to use the scanner class
 public class Bicycle { //main method to use Java Program
