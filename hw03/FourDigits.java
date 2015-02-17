@@ -29,6 +29,6 @@ public class FourDigits { //define class
         
         //output
         System.out.println("The four digits are "+fourdigitsFinal+"."); //print out the result
-        
+          
     } //end of main method
 } //end of program
