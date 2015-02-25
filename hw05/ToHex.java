@@ -1,7 +1,7 @@
 ////////////////////////////////////////////////////////////////////////////
 //Jason Yang
-//HW04-ToHex
-//02.24 .2015
+//HW05-ToHex
+//02.24.2015
 //CSE-002
 //This program takes input decimal RGB values and outputs the hex value
 
