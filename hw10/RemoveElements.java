@@ -61,61 +61,68 @@ public class RemoveElements{
         
         for (int i = 0; i < 10; i++) { //for i = 0~9 increase i by 1 each time
             numTEN[i] = rand.nextInt(10); //input random number
-        }
+        } //end for
         return numTEN; //returns numTEN
-    }
+    } //end of randomInput method
     
-    //delete method
-    public static int[] delete(int[] numTEN, int a) { //array method with an input array and index value. Index value = a
+    public static int[] delete(int list[], int pos) { //array method for list and pos. deleting an index.
+        int length=list.length - 1; //length is equal to length of list - 1
+        int numIndex[]= new int[length]; //new set of array with new length of array
+        int counter = 0; //create counter
         
-        if (a >= 0 && a < 10) { //if a is 0~9
-            int[] numNINE = new int[9]; //create a new array with 10-1= 9 random integers
-            for(int i = 0; i < 10; i++) { //for i = 0~9 increase i by 1 each time
-                if(i < a) { //if i < a
-                    numNINE[i] = numTEN[i]; //copying
-                }
-                else if(i == a) { 
-                    
-                }
-                else {
-                    numNINE[i-1] = numTEN[i];
-                }
-            }
-            return numNINE; //return new array
-        }
-        else { //if a is not 0~9
-            System.out.println("Index is not valid."); //not a valid index
-            return numTEN; //return the old set of 10 number arrays
-        }
-    }
-    
-    //remove method
-    public static int[] remove(int[] num, int x) { //array method with input array and target value x
-        int count = 0; //create a counter so we can match the target value
-        for(int i = 0; i < 10; i++) { //for i is 0~9, increase i by one each time
-            if(num[i] == x) { //if they are equal
-                count++; //add one to the counter
-            }
-        }
+        if (pos > 9 || pos < 0) { //if index is greater than 9 or less than 0.
+            System.out.println("The index is not valid."); //not a valid index
+            return list; //give the original array back.
+        } //end of if statement
         
-        if(count == 0) { //if count was not matched
-            System.out.print("Element " + x + " was not found"); //target value was not found
-        }
-        else { //if count was matched
-            System.out.print("Element " + x + " has been found"); //target value was found and removed
-        }
+        else { //if index is within range
+            System.out.println("Index "+pos+" element was removed"); //remove the index
+        } //end else
         
-        int[] numNEW = new int[10-count]; //create a new array that is now set of 10 - matched counts
-        int z = 0; //create another counter
+        for (int i = 0; i < length; i++) { //for i is 0~length, increase i by 1 each time
+            if(i == pos) { 
+                continue; //continue
+            } //end if
+            
+            else {
+                numIndex[counter]=list[i]; //copy
+                counter++; //increase counter by 1
+            } //end else
+        } //end for loop
+        return numIndex;
+    } //end of delete method
+  
+    public static int[] remove(int list[],int target){ //array method for list and target. Removing a target.
+        int counter=0; //create counter for counting how many targets there are
         
-        for(int i = 0; i < 10; i++) { //for i is 0~9, increase i by 1.
-            if (num[i] != x) { //if original array does not equal to the target
-                numNEW[i-z] = num[i]; //copying
-            }
-            else { //if origial array equal the target
-                z++; //if it is, then add one to the counter
-            }
-        }
-        return numNEW; //return the new array
-    }
-}
+        for (int i = 0; i < list.length; i++) { //for i is 0~list.length, increase i by 1 each time.
+            if (list[i] == target) { //if the target matches list[i]
+                 counter++; //increase counter by 1
+            } //end of if
+        } //end of for loop
+      
+        if (counter == 0) { //if there are 0
+            System.out.println("Element "+target+" was not found"); //Invalid
+            return list; //give back the original
+        } //end of if
+        
+        else{
+            System.out.println("Element "+target+" was removed -"+counter+")");
+        } //end of else
+        
+        int numTarget[]= new int[list.length - counter];
+        int index=0;
+        
+        for(int i = 0; i < list.length; i++){
+            if(list[i] == target){ //if list = target
+                continue; //continue
+            } //end of if
+            
+            else{
+                numTarget[index]=list[i];
+                index++;
+            } //end of else
+        } //end of for
+         return numTarget; //return the new array after target is removed
+    } //end of remove method 
+} //end of class
