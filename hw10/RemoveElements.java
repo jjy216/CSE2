@@ -107,7 +107,7 @@ public class RemoveElements{
         } //end of if
         
         else{
-            System.out.println("Element "+target+" has been found -"+counter+")");
+            System.out.println(+ counter + "Element "+target+" has been found");
         } //end of else
         
         int numTarget[]= new int[list.length - counter];
