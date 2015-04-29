@@ -1,3 +1,9 @@
+////////////////////////////////////////////////////////////////////////////
+//Jason Yang
+//Lab10-ArrayInputs
+//05.01.2015
+//CSE-002
+
 import java.util.Scanner;
 
 public class ArrayInputs {
